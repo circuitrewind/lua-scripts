@@ -9,8 +9,6 @@ ydir	= esp.random((length/2),length) / length
 zdir	= esp.random((length/2),length) / length
 
 
-led.write(1, 0, 0xffffff)
-
 function frame()
 	x = x + xdir
 	y = y + ydir
