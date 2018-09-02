@@ -106,7 +106,7 @@ end
 
 function frame()
 	for i=0,3 do
-		led.multiply(i, 0xefefef)
+		led.sub(i, 0x101010)
 	end
 
 	for idx, item in ipairs(dots) do
