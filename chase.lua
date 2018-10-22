@@ -1,4 +1,4 @@
-length	= 100
+length	= led.length(0)
 
 x		= esp.random(0, length)
 y		= esp.random(0, length)
@@ -44,10 +44,8 @@ function frame()
 		zdir = esp.random((length/2),length) / length
 	end
 
-	for i=0,3 do
-		led.multiply(i, 0xefefef)
-		led.write(i, x, led.read(i, x) + 0xff0000)
-		led.write(i, y, led.read(i, y) + 0x00ff00)
-		led.write(i, z, led.read(i, z) + 0x0000ff)
-	end
+	led.multiply(0, 0xefefef)
+	led.write(0, x, color.add(led.read(0, x), 0xff0000))
+	led.write(0, y, color.add(led.read(0, y), 0x00ff00))
+	led.write(0, z, color.add(led.read(0, z), 0x0000ff))
 end
